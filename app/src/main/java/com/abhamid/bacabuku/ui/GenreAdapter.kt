@@ -3,9 +3,12 @@ package com.abhamid.bacabuku.ui
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.abhamid.bacabuku.R
 import com.abhamid.bacabuku.model.Genre
+import com.abhamid.bacabuku.model.SharedPrefs
 import kotlinx.android.synthetic.main.list_genre.view.*
 
 class GenreAdapter(private val genre: MutableList<Genre>) : RecyclerView.Adapter<ViewHolder>() {
@@ -33,6 +36,11 @@ class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         this.genre = genre
         itemView.genre_title.text =genre.title
         itemView.genre_count.text = genre.count.toString()
+
+        itemView.setOnClickListener {
+//            SharedPrefs.saveGenre(genre.id)
+            Toast.makeText(itemView.context, genre.title, Toast.LENGTH_SHORT).show()
+        }
     }
 
 }

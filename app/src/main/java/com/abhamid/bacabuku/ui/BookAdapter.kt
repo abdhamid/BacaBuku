@@ -3,6 +3,7 @@ package com.abhamid.bacabuku.ui
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.abhamid.bacabuku.R
 import com.abhamid.bacabuku.model.Book
@@ -36,8 +37,13 @@ class BookViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         itemView.book_title.text =book.title
         val picasso = Picasso.get()
             .load(Injection.BASE_IMG + book.coverUrl + Injection.IMG_API_KEY)
+            .fit()
+            .placeholder(R.color.secondaryLightColor)
             .into(itemView.book_cover)
 
+        itemView.setOnClickListener {
+            Toast.makeText(itemView.context, "Not finished :(", Toast.LENGTH_SHORT).show()
+        }
     }
 
 }

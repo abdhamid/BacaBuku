@@ -14,19 +14,18 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.abhamid.bacabuku.R
 import com.abhamid.bacabuku.model.ApiError
 import com.abhamid.bacabuku.model.Book
-import com.abhamid.bacabuku.model.Genre
 import com.abhamid.bacabuku.model.Status
-import com.abhamid.bacabuku.viewmodel.NewBooksViewModel
+import com.abhamid.bacabuku.viewmodel.BooksViewModel
 import kotlinx.android.synthetic.main.fragment_new_book.*
 
 class NewBookFragment : Fragment() {
-    private lateinit var newBooksViewModel: NewBooksViewModel
+    private lateinit var newBooksViewModel: BooksViewModel
     private val adapter = BookAdapter(mutableListOf())
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        newBooksViewModel = ViewModelProviders.of(this).get(NewBooksViewModel::class.java)
+        newBooksViewModel = ViewModelProviders.of(this).get(BooksViewModel::class.java)
         return inflater.inflate(R.layout.fragment_new_book, container, false)
     }
 

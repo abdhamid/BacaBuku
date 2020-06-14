@@ -10,6 +10,7 @@ import retrofit2.Response
 
 object Repository : RepositoryHelper {
     private val api =Injection.provideCabacaApi()
+//    private val genreId = SharedPrefs.getGenre()
 
     override fun getGenre(): LiveData<Either<Resource>> {
         val liveData = MutableLiveData<Either<Resource>>()
@@ -46,8 +47,27 @@ object Repository : RepositoryHelper {
         })
         return liveData
     }
+
+//    override fun getBooksByGenre(): LiveData<Either<Books>> {
+//        val liveData = MutableLiveData<Either<Books>>()
+//        api.getBooksByGenre(1).enqueue(object : Callback<Books>{
+//            override fun onResponse(call: Call<Books>?, response: Response<Books>?) {
+//                if (response != null && response.isSuccessful) {
+//                    liveData.value = Either.success(response.body())
+//                } else {
+//                    liveData.value = Either.error(ApiError.BOOKS, null)
+//                }
+//            }
+//
+//            override fun onFailure(call: Call<Books>?, t: Throwable?) {
+//                liveData.value = Either.error(ApiError.BOOKS, null)
+//            }
+//        })
+//        return liveData
+//    }
 }
 interface RepositoryHelper {
     fun getGenre(): LiveData<Either<Resource>>
     fun getNewBooks(): LiveData<Either<Books>>
+//    fun getBooksByGenre(): LiveData<Either<Books>>
 }
