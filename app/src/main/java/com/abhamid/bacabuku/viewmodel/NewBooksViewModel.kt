@@ -4,10 +4,10 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import com.abhamid.bacabuku.network.Injection
 
-class GenreViewModel(application: Application):AndroidViewModel(application) {
+class NewBooksViewModel(application: Application):AndroidViewModel(application) {
     private val repository = Injection.provideRepository()
-//    private val allGenre =repository.getAllGenre()
-    private val allGenre = repository.getGenre()
-    fun getAllGenre() = allGenre
+
+    private val newBooks = repository.getNewBooks()
+    fun getNewBooks() = newBooks
 
 }

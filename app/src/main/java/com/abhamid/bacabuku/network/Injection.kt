@@ -1,9 +1,6 @@
 package com.abhamid.bacabuku.network
 
 import com.abhamid.bacabuku.BuildConfig
-import com.abhamid.bacabuku.model.Genre
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -13,6 +10,8 @@ object Injection {
     private const val BASE_URL = "https://cabaca.id:8443/api/v2/"
     private const val HEADER_NAME = "x-dreamfactory-api-key"
     private const val HEADER_VALUE = "25e0bf00ab2fa7f03a9fa57035139e47ccb28c20658f6de907b8011347e369fb"
+    const val BASE_IMG = "https://cabaca.id:8443/api/v2/files/"
+    const val IMG_API_KEY = "&api_key=32ded42cfffb77dee86a29f43d36a3641849d4b5904aade9a79e9aa6cd5b5948"
 
     fun provideRepository(): RepositoryHelper = Repository
 

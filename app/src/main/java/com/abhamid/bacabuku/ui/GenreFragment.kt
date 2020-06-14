@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.abhamid.bacabuku.R
 import com.abhamid.bacabuku.model.ApiError
-import com.abhamid.bacabuku.model.Either
 import com.abhamid.bacabuku.model.Genre
 import com.abhamid.bacabuku.model.Status
 import com.abhamid.bacabuku.viewmodel.GenreViewModel
